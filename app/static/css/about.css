@@ -4,10 +4,11 @@
     padding: 20px;
 }
 
-h1 {
+.text-center {
     color: #0056b3;
     font-size: 2.5rem;
     font-weight: bold;
+    margin-bottom: 50px ;
 }
 
 .row {
@@ -15,6 +16,8 @@ h1 {
     justify-content: center; /* Centers the cards horizontally */
     flex-wrap: wrap; /* Ensures cards wrap to the next line on smaller screens */
     gap: 20px; /* Adds space between cards */
+    /* height: auto  ; */
+    margin-bottom: 100px ;
 }
 
 .col-md-5 {
@@ -84,7 +87,8 @@ h1 {
 }
 
 .cv-button {
-    display: inline-flex;
+    display: flex;
+    justify-content: center;
     align-items: center;
     gap: 10px;
     background: #007bff;
