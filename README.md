@@ -2,6 +2,8 @@
 
 This is a Flask-based desktop application for data analysis with machine learning capabilities.
 
+---
+
 ## Development Setup Guide
 
 ### 1. Activate the Virtual Environment
@@ -23,6 +25,8 @@ Then activate the virtual environment:
 
 You'll know it's activated when you see `(venv)` at the beginning of your terminal prompt.
 
+---
+
 ### 2. Start the Flask Application
 
 Once the virtual environment is activated, start the Flask application:
@@ -30,14 +34,18 @@ Once the virtual environment is activated, start the Flask application:
 python app.py
 ```
 
-The application will be available at: http://localhost:5000
+The application will be available at: [http://localhost:5000](http://localhost:5000)
+
+---
 
 ### 3. Development Workflow
 
-- Make your code changes in your preferred editor
-- The Flask development server will automatically reload when you save changes
-- View the changes in your web browser at http://localhost:5000
-- Check the terminal for any error messages or logs
+- Make your code changes in your preferred editor.
+- The Flask development server will automatically reload when you save changes.
+- View the changes in your web browser at [http://localhost:5000](http://localhost:5000).
+- Check the terminal for any error messages or logs.
+
+---
 
 ### 4. Installing New Dependencies
 
@@ -46,10 +54,12 @@ If you need to install new Python packages:
 pip install package_name
 ```
 
-Don't forget to update requirements.txt after installing new packages:
+Don't forget to update `requirements.txt` after installing new packages:
 ```bash
 pip freeze > requirements.txt
 ```
+
+---
 
 ### 5. Deactivate the Virtual Environment
 
@@ -58,23 +68,26 @@ When you're done working, deactivate the virtual environment:
 deactivate
 ```
 
-## Project Structure (updated)
+---
+
+## Project Structure
 
 ```
 data_analysis_app/
-         MLmodel.py            # ML model implementations
-database/                  # Database related code
-      db.py                 # Database configuration
-         __init__.py
-         preprocess.py         # Preprocessing functions
-routes/                    # Application routes
-      export_routes.py      # Export endpoints
-      visualization_routes.py# Visualization endpoints
-visualization/             # Visualization code
-charts.py             # Chart generation
-                        visualisation.js             # Visualisation functionality
-
-                        uploads/                      # Directory for uploaded files
-config.py                     # Configuration settings
-README.md                     # Project documentation
-```
+|-- MLmodel.py               # ML model implementations
+|-- database/                # Database related code
+|   |-- db.py                # Database configuration
+|   |-- __init__.py
+|   |-- preprocess.py        # Preprocessing functions
+|
+|-- routes/                  # Application routes
+|   |-- export_routes.py     # Export endpoints
+|   |-- visualization_routes.py # Visualization endpoints
+|
+|-- visualization/           # Visualization code
+|   |-- charts.py            # Chart generation
+|   |-- visualisation.js     # Visualization functionality
+|
+|-- uploads/                 # Directory for uploaded files
+|-- config.py                # Configuration settings
+|-- README.md                # Project documentation
