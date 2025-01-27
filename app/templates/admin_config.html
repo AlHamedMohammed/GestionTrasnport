@@ -1,11 +1,20 @@
 {% extends "base.html" %}
 
-{% block title %}Admin Dashboard{% endblock %}
+{% block title %}
+    
+    <link rel="icon" href="{{ url_for('static', filename='images/vehicle.png') }}" type="image/jpeg">
+    <title > Admin Dashboard </title >
 
-{% block content %}
+{% endblock %}
+
+{% block pageStyle %}
 <!-- Add Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_conf.css') }}">
+
+{% endblock %}
+
+{% block content %}
 <div class="admin-page">
 <div class="admin-container">
 

@@ -1,11 +1,17 @@
 {% extends "base.html" %}
 
-{% block title %}Importation des Données{% endblock %}
+{% block title %}
+
+        <link rel="icon" href="{{ url_for('static', filename='images/vehicle.png') }}" type="image/jpeg">
+        <title>  Importation des Données  </title>
+{% endblock %}
 
 {% block content %}
 
 
 <!-- Add Font Awesome for icons -->
+<link rel="icon" href="{{ url_for('static', filename='images/vehicle.png') }}" type="image/jpeg">
+    
 <link rel="stylesheet" href="{{ url_for('static', filename='css/import.css') }}">
 
 {% endblock %}

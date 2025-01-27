@@ -1,12 +1,17 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Nouvelle Réservation | TransportManager</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/reservation.css') }}">
-</head>
+{% extends "base.html" %}
+
+
+{%block title %}      
+            <link rel="icon" href="{{ url_for('static', filename='images/vehicle.png') }}" type="image/jpeg">
+            <title> Nouvelle Réservation | TransportManager </title> 
+{% endblock %}
+    
+{%block pageStyle %}
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/reservation.css') }}">
+{%endblock%}
+
+
 <body data-page="reservation">
-    {% extends "base.html" %}
     {% block content %}
     <div class="reservation-container">
         <!-- Progress Bar -->

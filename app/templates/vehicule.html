@@ -1,12 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+{% extends "base.html" %}
+
+
+{%block title %} 
+   
+    <link rel="icon" href="{{ url_for('static', filename='images/vehicle.png') }}" type="image/jpeg">
     <title>Gestion des Véhicules | TransportManager</title>
+{% endblock %} 
+
+{% block pageStyle%}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/vehicule.css') }}">
-</head>
+{%endblock %}
+
 <body>
-    {% extends "base.html" %}
 
     {% block content %}
     <div class="vehicles-container">

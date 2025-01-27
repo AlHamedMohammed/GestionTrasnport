@@ -1,11 +1,18 @@
 {% extends "base.html" %}
 
-{% block title %}Paramètres du compte{% endblock %}
+{% block title %}
+        <link rel="icon" href="{{ url_for('static', filename='images/vehicle.png') }}" type="image/jpeg">
+        <title> Paramètres du compte </title> 
+            
+{% endblock %}
+
+{% block pageStyle %}
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+{% endblock %}
 
 {% block content %}
-<head>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-</head>
+
 
 <div class="account-container">
     <div class="account-header">
