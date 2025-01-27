@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <title>Dashboard | TransportManager</title>
+   
+</head>
+<body>
+    {% extends "base.html" %}
+
+    {% block title %}Dashboard{% endblock %}
+
+    {% block content %}
+    <div class="dashboard-container">
+        <!-- Profile Section -->
+        <div class="profile-card">
+            <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Profile" class="profile-image">
+            <div class="profile-info">
+                <h2> current_user.name </h2>
+                <p>current_user.role </p>
+                <p> current_user.email </p>
+            </div>
+            <a class="edit-profile-btn" href="{{ url_for('main.account') }}">
+                <i class="fas fa-user-edit"></i> Modifier le profil
+            </a>
+                
+        
+        </div>
+
+      
+<div class="stats-container">
+    <div class="stat-card">
+        <i class="fas fa-car stat-icon"></i>
+        <div class="stat-value">12</div>
+        <div class="stat-label">Véhicules disponibles</div>
+    </div>
+    <div class="stat-card">
+        <i class="fas fa-users stat-icon"></i>
+        <div class="stat-value">24</div>
+        <div class="stat-label">Conducteurs actifs</div>
+    </div>
+    <div class="stat-card">
+        <i class="fas fa-calendar-check stat-icon"></i>
+        <div class="stat-value">8</div>
+        <div class="stat-label">Réservations en attente</div>
+    </div>
+    <div class="stat-card">
+        <i class="fas fa-comments stat-icon"></i>
+        <div class="stat-value">15</div>
+        <div class="stat-label">Nouveaux retours</div>
+    </div>
+</div>
+        <!-- Recent Activities Section -->
+        <div class="recent-activities">
+            <div class="activities-header">
+                <h3>Activités récentes</h3>
+                <a href="#" class="see-all-btn">Voir tout</a>
+            </div>
+            <ul class="activities-list">
+                {% for activity in recent_activities %}
+                <li class="activity-item">
+                    <div class="activity-icon">
+                        <i class="{{ activity.icon }}"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h4 class="activity-title">{{ activity.title }}</h4>
+                        <p class="activity-time">{{ activity.timestamp }}</p>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    {% endblock %}
+</body>
+</html>

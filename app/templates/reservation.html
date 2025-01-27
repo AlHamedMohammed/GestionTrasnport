@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Nouvelle Réservation | TransportManager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reservation.css') }}">
+</head>
+<body data-page="reservation">
+    {% extends "base.html" %}
+    {% block content %}
+    <div class="reservation-container">
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress-step" data-step="1">
+                1
+                <span class="progress-label">Trajet</span>
+            </div>
+            <div class="progress-step" data-step="2">
+                2
+                <span class="progress-label">Véhicule</span>
+            </div>
+            <div class="progress-step" data-step="3">
+                3
+                <span class="progress-label">Chauffeur</span>
+            </div>
+            <div class="progress-step" data-step="4">
+                4
+                <span class="progress-label">Confirmation</span>
+            </div>
+        </div>
+
+        <!-- Step 1: Journey Details -->
+        <div class="form-section" id="step1">
+            <h2>Détails du Trajet</h2>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label class="form-label">Lieu de départ</label>
+                    <input type="text" class="form-control" placeholder="Entrez le lieu de départ">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Lieu d'arrivée</label>
+                    <input type="text" class="form-control" placeholder="Entrez le lieu d'arrivée">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Date de départ</label>
+                    <input type="datetime-local" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Date d'arrivée estimée</label>
+                    <input type="datetime-local" class="form-control">
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="form-navigation">
+            <button class="nav-button btn-prev" disabled>Précédent</button>
+            <button class="nav-button btn-next" onclick="navigateTo('vehicule')">Suivant</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const pageToStep = {
+                "reservation": 1,
+                "vehicule": 2,
+                "chauffeur": 3,
+                "confirmation": 4
+            };
+
+            const currentPage = document.body.dataset.page;
+            const progressSteps = document.querySelectorAll(".progress-step");
+
+            if (pageToStep[currentPage]) {
+                const currentStep = pageToStep[currentPage];
+
+                progressSteps.forEach((step, index) => {
+                    const stepIndex = index + 1;
+
+                    if (stepIndex < currentStep) {
+                        step.classList.add("completed");
+                    } else if (stepIndex === currentStep) {
+                        step.classList.add("active");
+                    }
+                });
+            }
+        });
+
+        function navigateTo(page) {
+            // Update the URL for redirection
+            const routes = {
+                "vehicule": "{{ url_for('main.vehicule') }}",
+                "chauffeur": "{{ url_for('main.chauffeur') }}",
+                "confirmation": "{{ url_for('main.vehicule') }}"
+            };
+            window.location.href = routes[page];
+        }
+    </script>
+    {% endblock %}
+</body>
+</html>
